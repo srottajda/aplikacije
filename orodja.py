@@ -1,3 +1,4 @@
+
 import csv
 import os
 import requests
@@ -28,10 +29,9 @@ def shrani(url, ime_datoteke, vsili_prenos=False):
             datoteka.write(r.text)
             print('shranjeno!')
 
-
 def vsebina_datoteke(ime_datoteke):
     '''Vrne niz z vsebino datoteke z danim imenom.'''
-    with open(ime_datoteke) as datoteka:
+    with open(ime_datoteke, "r",encoding='utf-8', errors='ignore') as datoteka:
         vsebina = datoteka.read()
     return vsebina
 
